@@ -27,8 +27,7 @@ class VideoPlayScreen extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props);
-
+    
     this.props.navigation.setOptions({
       title: this.props.route.params.pageTitle,
     })
@@ -68,8 +67,8 @@ class VideoPlayScreen extends Component {
               resizeMode="contain"
               showPoster={true}
               // shouldPlay={true}
-              // onFullscreenUpdate={this.setOrientation}
-              style={[{width : width, height: 100, }, videoStyle.videoPlayer]}/>
+              onFullscreenUpdate={this.setOrientation}
+              style={[{width : width, height: ITEM_HEIGHT, }, videoStyle.videoPlayer]}/>
           )
         }
       </SafeAreaView>

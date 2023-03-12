@@ -1,7 +1,7 @@
 module.exports = function(api) {
   api.cache(true);
   return {
-    presets: ['babel-preset-expo', 'module:metro-react-native-babel-preset'],
+    presets: ['babel-preset-expo', 'module:metro-react-native-babel-preset',  "@babel/preset-flow"],
     plugins: [
       [
         'module:react-native-dotenv',
@@ -13,7 +13,9 @@ module.exports = function(api) {
           safe: true,
           allowUndefined: false
         }
-      ]
+      ],
+      ["@babel/plugin-proposal-decorators", { "legacy" : true }],
+      ["@babel/plugin-proposal-class-properties", { "loose" : true }],
     ]
   };
 };
